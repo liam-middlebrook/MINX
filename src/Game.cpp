@@ -16,6 +16,9 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 	*/
+#define GLEW_STATIC
+#include <GL/glew.h>
+#include <GL/glfw.h>
 #include "Game.h"
 #include <iostream>
 #if defined(LINUX) || defined(OSX)
@@ -26,78 +29,62 @@
 using namespace MINX;
 using namespace MINX::Graphics;
 using namespace std;
-mutex * videoLock;
 Game::Game()
 {	
-	videoLock = new mutex();
 	desiredFPS = 60;
 	windowWidth = 640;
 	windowHeight = 480;
 	windowBPP = 32;
 	windowFlags = 0;
-	Components = new vector<GameComponent*>();
-	eventHandlers = new vector<EventHandler*>();
-	gameTime = new GameTime();
 	#if defined(LINUX) || defined(OSX)
 	XInitThreads();
 	#endif
+	Components = new vector<GameComponent*>();
+	eventHandlers = new vector<EventHandler*>();
 }
 
 int doUpdate(void * game){
-	Game * thisGame = (Game*)game;
-	while(thisGame->isRunning)
-	{
-		#ifdef _WIN32
-		videoLock->lock();
-		#endif
-		thisGame->Update(thisGame->getGameTime());
-		#ifdef _WIN32
-		videoLock->unlock();
-		#endif
-	}
+
+		((Game*)game)->Update(((Game*)game)->getGameTime());
+	
 	return 0;
 }
 
 void Game::Run()
 {
+
+	gameTime = new GameTime();
 	std::cout << "Game Running!\n";
 	preventAutoQuitting = false;
 	this->Initialize();
 	this->LoadContent();
-	SDL_Thread * updatingThread = SDL_CreateThread(doUpdate,"a",(void*)this);
 	while(isRunning)
 	{
-		if(SDL_PollEvent(&evt))
+		for(vector<EventHandler*>::size_type i = 0; i < eventHandlers->size(); i++)
 		{
-			for(vector<EventHandler*>::size_type i = 0; i < eventHandlers->size(); i++)
-			{
-				(*eventHandlers)[i]->handleEvent(&evt,gameTime);
-			}
-			if(evt.type == SDL_QUIT)
-			{
-				isRunning = preventAutoQuitting;
-			}
+			(*eventHandlers)[i]->handleEvent();
 		}
-		videoLock->lock();
+		doUpdate(this);
 		this->Draw(this->gameTime);
-		
-		videoLock->unlock();
 	}
-	SDL_WaitThread(updatingThread,NULL);
 	this->UnloadContent();
 }
 
-GameTime * Game::getGameTime()
+GameTime* Game::getGameTime()
 {
 	return gameTime;
 }
 
 void Game::Initialize()
 {
-	if(glfwInit() == -1)
+	
+	if(!glfwInit())
 	{
-		std::cout << "GLFW NOT INITED!\n";
-	}
+	std::cout << "GLFW NOT INITED!\n";
+		exit(EXIT_FAILURE);
+	}	
+
+	
 	gameWindow = new GameWindow(windowWidth, windowHeight, windowBPP, windowFlags, "Window");
 	glewExperimental=true;
 	if(glewInit() == -1 )
@@ -108,6 +95,59 @@ void Game::Initialize()
 	{
 		(*Components)[i]->Initialize();
 	}
+
+	
+	const char* vertexSource =
+		"#version 150\n"
+		"in vec2 position;"
+		"in vec3 color;"
+		"in vec2 texcoord;"
+		"out vec3 Color;"
+		"out vec2 Texcoord;"
+		"uniform mat4 trans;"
+		"void main() {"
+		"	Color = color;"
+		"	Texcoord = texcoord;"
+		"	gl_Position = trans * vec4( position, 0.0, 1.0 );"
+		"}";
+	const char* fragmentSource =
+		"#version 150\n"
+		"in vec3 Color;"
+		"in vec2 Texcoord;"
+		"out vec4 outColor;"
+		"uniform sampler2D tex;"
+		"uniform vec3 tint;"
+		"void main() {"
+		"	outColor = vec4(Color,1.0) * texture(tex, Texcoord) * vec4(tint,1.0);"
+		"}";
+
+	GLuint vertexShader = glCreateShader(GL_VERTEX_SHADER);
+	glShaderSource(vertexShader, 1, &vertexSource, NULL);	//Create a new Vertex Shader and set it to the value of vertex source
+	glCompileShader(vertexShader);	// compile the vertex shader
+
+	GLint status;
+	glGetShaderiv( vertexShader, GL_COMPILE_STATUS, &status );
+	//Check if the shader compiled succesfully
+
+	std::cout << status << " Vertex Shader\n";
+
+	GLuint fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
+	glShaderSource(fragmentShader, 1, & fragmentSource, NULL); //Create a new Fragment shader and set it to the value of fragment source
+	glCompileShader(fragmentShader);	//compile the vertexShader
+
+	glGetShaderiv( fragmentShader, GL_COMPILE_STATUS, &status );
+	std::cout << status << " Fragment Shader\n";
+
+	
+	shaderProgram = glCreateProgram();
+	glAttachShader(shaderProgram, vertexShader);
+	glAttachShader(shaderProgram, fragmentShader);
+	glBindFragDataLocation(shaderProgram, 0, "outColor");
+	//bind the fragmentation data
+
+	glLinkProgram(shaderProgram);
+	glUseProgram(shaderProgram);
+
 }
 void Game::LoadContent()
 {
@@ -122,17 +162,19 @@ void Game::Update(GameTime * gameTime)
 		{
 			(*Components)[i]->Update(gameTime);
 		}
-	}
-	gameTime->limitFPS(desiredFPS);
+	}/*
+	gameTime->limitFPS(desiredFPS);*/
 }
 void Game::Draw(GameTime * gameTime)
 {
-	SDL_RenderPresent(sdlRenderer);
+	//
+	glfwSwapBuffers();
 }
 
 void Game::UnloadContent()
 {
     //SDL_DestroySemaphore( videoLock );
+	glDeleteProgram( shaderProgram );
 	glfwTerminate();
 }
 
