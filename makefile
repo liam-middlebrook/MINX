@@ -1,6 +1,5 @@
 ##### Variables
 AT:=@
-INCDIR = -I/usr/local/include/SDL2
 CPPFLAGS += -g -Wall -W $(INCDIR) -fPIC
 LFLAGS = -lX11 -lglfw -lGL -lGLEW -lfreeimage
 CXX = g++

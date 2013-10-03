@@ -131,6 +131,7 @@ bool Model::loadMeshes(string filename, iqmheader hdr, unsigned char buf[])
         iqmmesh &m = meshes[i];
         printf("%s: loaded mesh: %s\n", filename.c_str(), &str[m.name]);
         //textures[i] = loadtexture(&str[m.material], 0);
+        glBindTexture(GL_TEXTURE_2D,textures[i]);
         FIBITMAP* bitmap = FreeImage_Load(
 			FreeImage_GetFileType(filename.c_str(), 0),
 			filename.c_str());
@@ -139,7 +140,7 @@ bool Model::loadMeshes(string filename, iqmheader hdr, unsigned char buf[])
 		int nWidth = FreeImage_GetWidth(pImage);
 		int nHeight = FreeImage_GetHeight(pImage);
 		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA8, nWidth, nHeight,
-			0, GL_BGRA, GL_UNSIGNED_BYTE, (void*)FreeImage_GetBits(pImage));
+			0, GL_RGBA, GL_UNSIGNED_BYTE, (void*)FreeImage_GetBits(pImage));
 
 		FreeImage_Unload(pImage);
         if(textures[i]) printf("%s: loaded material: %s\n", filename.c_str(), &str[m.material]);

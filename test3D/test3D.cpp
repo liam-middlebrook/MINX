@@ -33,13 +33,15 @@ void test3D::Initialize()
 {
 	
 	Game::Initialize();
-Model * m = new Model("mrfixit.iqm");
 }
 
 void test3D::LoadContent()
 {
 	//Put stuff here that loads content for your game.
 	Game::LoadContent();
+	cout << "a";
+	Model * m = new Model("mrfixit.iqm");
+	cout << "b";
 }
 
 void test3D::UnloadContent()
