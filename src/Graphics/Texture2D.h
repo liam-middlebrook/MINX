@@ -23,7 +23,7 @@
 #include <glm/gtc/type_ptr.hpp>
 #include <GL/glew.h>
 #include <GL/FreeImage.h>
-//#include "Color.h"
+#include "Color.h"
 #include "GameWindow.h"
 #include "../Rectangle.h"
 //TODO: Implement Sprite Sheet http://antongerdelan.net/opengl/sprite_sheets.html

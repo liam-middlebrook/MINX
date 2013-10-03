@@ -18,12 +18,11 @@
 	*/
 #include "Model.h"
 #include "iqmutils.h"
-#include <GL/gl.h>
-#include <GL/glext.h>
-#include <GL/glut.h>
 #include <iostream>
 #include <stdio.h>
 #include <cstring>
+
+extern GLuint loadtexture(const char *name, int clamp);
 
 using namespace MINX::Graphics::MINX3D;
 using namespace std;
@@ -66,7 +65,7 @@ Model::Model(string filename)
 	fclose(f);
 }
 
-bool Model::loadMeshes(string filename, iqmheader header, unsigned char buffer[])
+bool Model::loadMeshes(string filename, iqmheader hdr, unsigned char buf[])
 {
 	if(meshdata)
 	{
@@ -133,9 +132,9 @@ bool Model::loadMeshes(string filename, iqmheader header, unsigned char buffer[]
     for(int i = 0; i < (int)hdr.num_meshes; i++)
     {
         iqmmesh &m = meshes[i];
-        printf("%s: loaded mesh: %s\n", filename, &str[m.name]);
+        printf("%s: loaded mesh: %s\n", filename.c_str(), &str[m.name]);
         textures[i] = loadtexture(&str[m.material], 0);
-        if(textures[i]) printf("%s: loaded material: %s\n", filename, &str[m.material]);
+        if(textures[i]) printf("%s: loaded material: %s\n", filename.c_str(), &str[m.material]);
     }
 
     return true;

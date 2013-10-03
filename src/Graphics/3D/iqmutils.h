@@ -1,7 +1,7 @@
 #ifndef __UTIL_H__
 #define __UTIL_H__
 
-#define M_PI 3.14159265
+#include <math.h>
 
 typedef unsigned char uchar;
 typedef unsigned short ushort;

@@ -20,8 +20,12 @@
 #define MODEL_H_
 #include <string>
 #include <vector>
+#include <GL/gl.h>
+#include <GL/glext.h>
+#include <GL/glut.h>
 #include "../../Vector3.h"
 #include "iqm.h"
+#include "iqmgeom.h"
 using namespace std;
 namespace MINX
 {
@@ -37,11 +41,24 @@ namespace MINX
 					double getWorldX();
 					double getWorldY();
 					double getWorldZ();
+					void Draw();
 				private:
 					bool loadMeshes(string filename, iqmheader header, unsigned char buffer[]);
 					bool loadAnims(string filename, iqmheader header, unsigned char buffer[]);
 					vector<Vector3> vertices;
-					//vector<Material> materials;
+					unsigned char * meshdata;
+					int nummeshes = 0, numtris = 0, numverts = 0, numjoints = 0, numframes = 0, numanims = 0;
+					float *outposition = NULL, *outnormal = NULL, *outtangent = NULL, *outbitangent = NULL;
+					Matrix3x4 *baseframe = NULL, *inversebaseframe = NULL, *outframe = NULL, *frames = NULL;
+					GLuint *textures = NULL;
+					float *inposition = NULL, *innormal = NULL, *intangent = NULL, *intexcoord = NULL;
+					unsigned char *inblendindex = NULL, *inblendweight = NULL;
+					iqmtriangle *tris = NULL, *adjacency = NULL;
+					iqmmesh *meshes = NULL;
+					iqmjoint *joints = NULL;
+					iqmpose *poses = NULL;
+					iqmanim *anims = NULL;
+					iqmbounds *bounds = NULL;
 			
 			};
 		}
