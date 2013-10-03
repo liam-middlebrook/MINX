@@ -47,7 +47,7 @@ namespace MINX
 					bool loadMeshes(string filename, iqmheader header, unsigned char buffer[]);
 					bool loadAnims(string filename, iqmheader header, unsigned char buffer[]);
 					vector<Vector3> vertices;
-					unsigned char * meshdata, * animdata;
+					unsigned char * meshdata = NULL, * animdata = NULL;
 					int nummeshes = 0, numtris = 0, numverts = 0, numjoints = 0, numframes = 0, numanims = 0;
 					float *outposition = NULL, *outnormal = NULL, *outtangent = NULL, *outbitangent = NULL;
 					Matrix3x4 *baseframe = NULL, *inversebaseframe = NULL, *outframe = NULL, *frames = NULL;
