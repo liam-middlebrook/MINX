@@ -11,26 +11,40 @@
     but WITHOUT ANY WARRANTY; without even the implied warranty of
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     GNU General Public License for more details.
-matching
 
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 	*/
-#include "Content.h"
-using namespace MINX;
-
-AudioClip* Content::loadAudioClip(std::string name,  bool autoplay, bool loop)
+#ifndef MODEL_H_
+#define MODEL_H_
+#include <string>
+#include <vector>
+#include "../../Vector3.h"
+#include "iqm.h"
+using namespace std;
+namespace MINX
 {
-	return new AudioClip(name,autoplay,loop);
+	namespace Graphics
+	{
+		namespace MINX3D
+		{
+			class Model
+			{
+				public:
+					Model(string name);
+					void setWorldPosition(double x, double y, double z);
+					double getWorldX();
+					double getWorldY();
+					double getWorldZ();
+				private:
+					bool loadMeshes(string filename, iqmheader header, unsigned char buffer[]);
+					bool loadAnims(string filename, iqmheader header, unsigned char buffer[]);
+					vector<Vector3> vertices;
+					//vector<Material> materials;
+			
+			};
+		}
+	}
 }
-
-Texture2D* Content::loadTexture(std::string name,  GameWindow* window, SDL_Renderer* sdlRenderer)
-{
-	Texture2D* texture = new Texture2D(IMG_Load((name).c_str()), window, sdlRenderer);
-	return texture;
-}
-TTF_Font* Content::loadTTFFont(std::string name, int size)
-{
-	return TTF_OpenFont(name.c_str(), size);
-}
+#endif

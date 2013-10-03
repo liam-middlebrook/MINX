@@ -42,8 +42,8 @@ else
 endif
 ##### Files
 
-SOURCES = $(wildcard src/*.cpp) $(wildcard src/Graphics/*.cpp) $(wildcard src/Input/*.cpp) $(wildcard src/Audio/*.cpp)
-OBJECTS = $(patsubst src/%.cpp,src/%.o,$(wildcard src/*.cpp)) $(patsubst src/Graphics/%.cpp,src/Graphics/%.o,$(wildcard src/Graphics/*.cpp)) $(patsubst src/Input/%.cpp,src/Input/%.o,$(wildcard src/Input/*.cpp)) $(patsubst src/Audio/%.cpp,src/Audio/%.o,$(wildcard src/Audio/*.cpp))
+SOURCES = $(wildcard src/*.cpp) $(wildcard src/Graphics/*.cpp) $(wildcard src/Input/*.cpp) $(wildcard src/Audio/*.cpp) $(wildcard src/Graphics/3D/*.cpp)
+OBJECTS = $(patsubst src/%.cpp,src/%.o,$(wildcard src/*.cpp)) $(patsubst src/Graphics/%.cpp,src/Graphics/%.o,$(wildcard src/Graphics/*.cpp)) $(patsubst src/Input/%.cpp,src/Input/%.o,$(wildcard src/Input/*.cpp)) $(patsubst src/Audio/%.cpp,src/Audio/%.o,$(wildcard src/Audio/*.cpp)) $(patsubst src/Graphics/3D/%.cpp,src/Graphics/3D/%.o,$(wildcard src/Graphics/3D/*.cpp))
 
 
 

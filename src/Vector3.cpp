@@ -38,7 +38,7 @@ Vector3 Vector3::crossMultiply(const Vector3& mult)
 	  | x1 y1 z1 | = i(y1*z2 - z1*y2) - j(x1*z2 - z1*x2) + k(x1*y2 - y1*x2)
 	  | x2 y2 z2 |
 	*/
-	return Vector3(Y*mult.Z - Z*mult.Y, -(X*mult.Z - Z*mult.X),X*mult.Y - y*mult.X);
+	return Vector3(Y*mult.Z - Z*mult.Y, -(X*mult.Z - Z*mult.X),X*mult.Y - Y*mult.X);
 }
 float Vector3::operator*(const Vector3& mult)
 {
@@ -54,7 +54,7 @@ Vector3 Vector3::operator-()const
 }
 bool Vector3::operator==(const Vector3& compareTo)
 {
-	return compareTo.X == X && compareTo.Y == Y, && compareTo.Z == Z;
+	return compareTo.X == X && compareTo.Y == Y && compareTo.Z == Z;
 }
 bool Vector3::operator!=(const Vector3& compareTo)
 {

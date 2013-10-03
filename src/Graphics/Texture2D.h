@@ -5,7 +5,7 @@
 #include <glm/gtc/type_ptr.hpp>
 #include <GL/glew.h>
 #include <GL/FreeImage.h>
-#include "Color.h"
+//#include "Color.h"
 #include "GameWindow.h"
 namespace MINX
 {
