@@ -1,0 +1,294 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 42;
+	objects = {
+
+/* Begin PBXFileReference section */
+		3FD6FBB918A30F4A00F46E72 /* Game.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Game.cpp; sourceTree = "<group>"; };
+		3FD6FBBA18A30F4A00F46E72 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
+		3FD6FBBB18A30F4A00F46E72 /* GameComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameComponent.cpp; sourceTree = "<group>"; };
+		3FD6FBBC18A30F4A00F46E72 /* GameComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameComponent.h; sourceTree = "<group>"; };
+		3FD6FBBD18A30F4A00F46E72 /* GameTime.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameTime.cpp; sourceTree = "<group>"; };
+		3FD6FBBE18A30F4A00F46E72 /* GameTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameTime.h; sourceTree = "<group>"; };
+		3FD6FBC018A30F4A00F46E72 /* Color.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Color.cpp; sourceTree = "<group>"; };
+		3FD6FBC118A30F4A00F46E72 /* Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Color.h; sourceTree = "<group>"; };
+		3FD6FBC218A30F4A00F46E72 /* Font.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Font.cpp; sourceTree = "<group>"; };
+		3FD6FBC318A30F4A00F46E72 /* Font.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Font.h; sourceTree = "<group>"; };
+		3FD6FBC418A30F4A00F46E72 /* GameWindow.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameWindow.cpp; sourceTree = "<group>"; };
+		3FD6FBC518A30F4A00F46E72 /* GameWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameWindow.h; sourceTree = "<group>"; };
+		3FD6FBC618A30F4A00F46E72 /* ShaderFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ShaderFactory.cpp; sourceTree = "<group>"; };
+		3FD6FBC718A30F4A00F46E72 /* ShaderFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShaderFactory.h; sourceTree = "<group>"; };
+		3FD6FBC818A30F4A00F46E72 /* Texture2D.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Texture2D.cpp; sourceTree = "<group>"; };
+		3FD6FBC918A30F4A00F46E72 /* Texture2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Texture2D.h; sourceTree = "<group>"; };
+		3FD6FBCA18A30F4A00F46E72 /* TextureBatch.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TextureBatch.cpp; sourceTree = "<group>"; };
+		3FD6FBCB18A30F4A00F46E72 /* TextureBatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextureBatch.h; sourceTree = "<group>"; };
+		3FD6FBCD18A30F4A00F46E72 /* Axis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Axis.h; sourceTree = "<group>"; };
+		3FD6FBCE18A30F4A00F46E72 /* Button.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Button.cpp; sourceTree = "<group>"; };
+		3FD6FBCF18A30F4A00F46E72 /* Button.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Button.h; sourceTree = "<group>"; };
+		3FD6FBD018A30F4A00F46E72 /* GamePad.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GamePad.cpp; sourceTree = "<group>"; };
+		3FD6FBD118A30F4A00F46E72 /* GamePad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GamePad.h; sourceTree = "<group>"; };
+		3FD6FBD218A30F4A00F46E72 /* IGenericHID.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IGenericHID.cpp; sourceTree = "<group>"; };
+		3FD6FBD318A30F4A00F46E72 /* IGenericHID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGenericHID.h; sourceTree = "<group>"; };
+		3FD6FBD418A30F4A00F46E72 /* Keyboard.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Keyboard.cpp; sourceTree = "<group>"; };
+		3FD6FBD518A30F4A00F46E72 /* Keyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Keyboard.h; sourceTree = "<group>"; };
+		3FD6FBD618A30F4A00F46E72 /* Mouse.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Mouse.cpp; sourceTree = "<group>"; };
+		3FD6FBD718A30F4A00F46E72 /* Mouse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mouse.h; sourceTree = "<group>"; };
+		3FD6FBD818A30F4A00F46E72 /* MathHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MathHelper.cpp; sourceTree = "<group>"; };
+		3FD6FBD918A30F4A00F46E72 /* MathHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathHelper.h; sourceTree = "<group>"; };
+		3FD6FBDB18A30F4A00F46E72 /* SoundFile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SoundFile.cpp; sourceTree = "<group>"; };
+		3FD6FBDC18A30F4A00F46E72 /* SoundFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundFile.h; sourceTree = "<group>"; };
+		3FD6FBDD18A30F4A00F46E72 /* SoundPlaylist.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SoundPlaylist.cpp; sourceTree = "<group>"; };
+		3FD6FBDE18A30F4A00F46E72 /* SoundPlaylist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundPlaylist.h; sourceTree = "<group>"; };
+		3FD6FBDF18A30F4A00F46E72 /* Ray2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Ray2.cpp; sourceTree = "<group>"; };
+		3FD6FBE018A30F4A00F46E72 /* Ray2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ray2.h; sourceTree = "<group>"; };
+		3FD6FBE118A30F4A00F46E72 /* Rectangle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Rectangle.cpp; sourceTree = "<group>"; };
+		3FD6FBE218A30F4A00F46E72 /* Rectangle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rectangle.h; sourceTree = "<group>"; };
+		3FD6FBE318A30F4A00F46E72 /* Thread.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Thread.cpp; sourceTree = "<group>"; };
+		3FD6FBE418A30F4A00F46E72 /* Thread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Thread.h; sourceTree = "<group>"; };
+		3FD6FBE518A30F4A00F46E72 /* Vector2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Vector2.cpp; sourceTree = "<group>"; };
+		3FD6FBE618A30F4A00F46E72 /* Vector2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vector2.h; sourceTree = "<group>"; };
+		3FD6FBF718A310DC00F46E72 /* libMINX.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libMINX.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3FD6FBF518A310DC00F46E72 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3FD6FBAB18A30F0000F46E72 = {
+			isa = PBXGroup;
+			children = (
+				3FD6FBB818A30F4A00F46E72 /* src */,
+				3FD6FBF818A310DC00F46E72 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3FD6FBB818A30F4A00F46E72 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				3FD6FBB918A30F4A00F46E72 /* Game.cpp */,
+				3FD6FBBA18A30F4A00F46E72 /* Game.h */,
+				3FD6FBBB18A30F4A00F46E72 /* GameComponent.cpp */,
+				3FD6FBBC18A30F4A00F46E72 /* GameComponent.h */,
+				3FD6FBBD18A30F4A00F46E72 /* GameTime.cpp */,
+				3FD6FBBE18A30F4A00F46E72 /* GameTime.h */,
+				3FD6FBBF18A30F4A00F46E72 /* Graphics */,
+				3FD6FBCC18A30F4A00F46E72 /* Input */,
+				3FD6FBD818A30F4A00F46E72 /* MathHelper.cpp */,
+				3FD6FBD918A30F4A00F46E72 /* MathHelper.h */,
+				3FD6FBDA18A30F4A00F46E72 /* Media */,
+				3FD6FBDF18A30F4A00F46E72 /* Ray2.cpp */,
+				3FD6FBE018A30F4A00F46E72 /* Ray2.h */,
+				3FD6FBE118A30F4A00F46E72 /* Rectangle.cpp */,
+				3FD6FBE218A30F4A00F46E72 /* Rectangle.h */,
+				3FD6FBE318A30F4A00F46E72 /* Thread.cpp */,
+				3FD6FBE418A30F4A00F46E72 /* Thread.h */,
+				3FD6FBE518A30F4A00F46E72 /* Vector2.cpp */,
+				3FD6FBE618A30F4A00F46E72 /* Vector2.h */,
+			);
+			name = src;
+			path = ../src;
+			sourceTree = SOURCE_ROOT;
+		};
+		3FD6FBBF18A30F4A00F46E72 /* Graphics */ = {
+			isa = PBXGroup;
+			children = (
+				3FD6FBC018A30F4A00F46E72 /* Color.cpp */,
+				3FD6FBC118A30F4A00F46E72 /* Color.h */,
+				3FD6FBC218A30F4A00F46E72 /* Font.cpp */,
+				3FD6FBC318A30F4A00F46E72 /* Font.h */,
+				3FD6FBC418A30F4A00F46E72 /* GameWindow.cpp */,
+				3FD6FBC518A30F4A00F46E72 /* GameWindow.h */,
+				3FD6FBC618A30F4A00F46E72 /* ShaderFactory.cpp */,
+				3FD6FBC718A30F4A00F46E72 /* ShaderFactory.h */,
+				3FD6FBC818A30F4A00F46E72 /* Texture2D.cpp */,
+				3FD6FBC918A30F4A00F46E72 /* Texture2D.h */,
+				3FD6FBCA18A30F4A00F46E72 /* TextureBatch.cpp */,
+				3FD6FBCB18A30F4A00F46E72 /* TextureBatch.h */,
+			);
+			path = Graphics;
+			sourceTree = "<group>";
+		};
+		3FD6FBCC18A30F4A00F46E72 /* Input */ = {
+			isa = PBXGroup;
+			children = (
+				3FD6FBCD18A30F4A00F46E72 /* Axis.h */,
+				3FD6FBCE18A30F4A00F46E72 /* Button.cpp */,
+				3FD6FBCF18A30F4A00F46E72 /* Button.h */,
+				3FD6FBD018A30F4A00F46E72 /* GamePad.cpp */,
+				3FD6FBD118A30F4A00F46E72 /* GamePad.h */,
+				3FD6FBD218A30F4A00F46E72 /* IGenericHID.cpp */,
+				3FD6FBD318A30F4A00F46E72 /* IGenericHID.h */,
+				3FD6FBD418A30F4A00F46E72 /* Keyboard.cpp */,
+				3FD6FBD518A30F4A00F46E72 /* Keyboard.h */,
+				3FD6FBD618A30F4A00F46E72 /* Mouse.cpp */,
+				3FD6FBD718A30F4A00F46E72 /* Mouse.h */,
+			);
+			path = Input;
+			sourceTree = "<group>";
+		};
+		3FD6FBDA18A30F4A00F46E72 /* Media */ = {
+			isa = PBXGroup;
+			children = (
+				3FD6FBDB18A30F4A00F46E72 /* SoundFile.cpp */,
+				3FD6FBDC18A30F4A00F46E72 /* SoundFile.h */,
+				3FD6FBDD18A30F4A00F46E72 /* SoundPlaylist.cpp */,
+				3FD6FBDE18A30F4A00F46E72 /* SoundPlaylist.h */,
+			);
+			path = Media;
+			sourceTree = "<group>";
+		};
+		3FD6FBF818A310DC00F46E72 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3FD6FBF718A310DC00F46E72 /* libMINX.dylib */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		3FD6FBF318A310DC00F46E72 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		3FD6FBF618A310DC00F46E72 /* MINX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3FD6FBFB18A310DC00F46E72 /* Build configuration list for PBXNativeTarget "MINX" */;
+			buildPhases = (
+				3FD6FBF318A310DC00F46E72 /* Headers */,
+				3FD6FBF418A310DC00F46E72 /* Sources */,
+				3FD6FBF518A310DC00F46E72 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MINX;
+			productName = MINX;
+			productReference = 3FD6FBF718A310DC00F46E72 /* libMINX.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3FD6FBAD18A30F0000F46E72 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 3FD6FBB018A30F0000F46E72 /* Build configuration list for PBXProject "MINX" */;
+			compatibilityVersion = "Xcode 2.4";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 3FD6FBAB18A30F0000F46E72;
+			productRefGroup = 3FD6FBF818A310DC00F46E72 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3FD6FBF618A310DC00F46E72 /* MINX */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3FD6FBF418A310DC00F46E72 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		3FD6FBAE18A30F0000F46E72 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Debug;
+		};
+		3FD6FBAF18A30F0000F46E72 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+			};
+			name = Release;
+		};
+		3FD6FBF918A310DC00F46E72 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				EXECUTABLE_PREFIX = lib;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				INSTALL_PATH = /usr/local/lib;
+				PREBINDING = NO;
+				PRODUCT_NAME = MINX;
+			};
+			name = Debug;
+		};
+		3FD6FBFA18A310DC00F46E72 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				EXECUTABLE_PREFIX = lib;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				INSTALL_PATH = /usr/local/lib;
+				PREBINDING = NO;
+				PRODUCT_NAME = MINX;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3FD6FBB018A30F0000F46E72 /* Build configuration list for PBXProject "MINX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3FD6FBAE18A30F0000F46E72 /* Debug */,
+				3FD6FBAF18A30F0000F46E72 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3FD6FBFB18A310DC00F46E72 /* Build configuration list for PBXNativeTarget "MINX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3FD6FBF918A310DC00F46E72 /* Debug */,
+				3FD6FBFA18A310DC00F46E72 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3FD6FBAD18A30F0000F46E72 /* Project object */;
+}
