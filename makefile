@@ -25,7 +25,8 @@ else
         TARGET = bin/libMINX.so
     endif
     ifeq ($(UNAME_S),Darwin)
-        CPPFLAGS += -D OSX 
+    	INCDIR += -I./FreeType/include -I./FreeType/include/freetype2
+        CPPFLAGS += -D OSX -std=c++11
         LFLAGS += -dynamiclib
         TARGET = bin/libMINX.dylib
     endif
